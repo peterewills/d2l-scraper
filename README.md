@@ -13,3 +13,5 @@ To use the script, perform the following steps:
 6. Shazam!
 
 Note that the `.html` file need not be in the same folder as the python script. However, if this is the case, you'll need to enter the full path of the `.html` file. Similarly, you can designate an arbitrary path for your `.csv` file; no path designation will place it in the current working directory.
+
+If all users cannot be displayed on one page in your web browser, download the pages separately and build individual `.csv` files for each. You can then manually combine them.
