@@ -11,8 +11,7 @@ def get_user_strings():
 
     soup = bs(html)
 
-    main_table = soup.find('table', {'id':'z_h'})
-    user_tags = main_table.find_all('a',{'title':'Email this user'})
+    user_tags = soup.find_all('a',{'title':'Email this user'})
     user_strings = [user.string.encode('utf-8') for user in user_tags]
 
     return user_strings
