@@ -9,10 +9,10 @@ def get_user_strings():
     location = raw_input('Enter path of saved html file: ')
     html = open(location).read()
 
-    soup = bs(html)
+    soup = bs(html,'lxml')
 
     user_tags = soup.find_all('a',{'title':'Email this user'})
-    user_strings = [user.string.encode('utf-8') for user in user_tags]
+    user_strings = [str(user.string) for user in user_tags]
 
     return user_strings
 
