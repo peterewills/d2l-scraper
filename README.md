@@ -1,7 +1,7 @@
 # d2l-scraper
 A web scraper to build .csv file of names in a D2L dropbox
 
-This script allows you to use Python to scrape a D2L dropbox and build a .csv file of the names of students who have contributed to that dropbox. **Note that this script requires Python 3, as well as the [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/) package**, which comes preinstalled with [Anaconda](https://anaconda.org) (which I strongly recommend for anyone using python for scientific computing).
+This script allows you to use Python to scrape a D2L dropbox and build a .csv file of the names of students who have contributed to that dropbox. This script should run in both Python 2 and 3, and it **requires the [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/) module**, which comes preinstalled with [Anaconda](https://anaconda.org) (which I strongly recommend for anyone using python for scientific computing).
 
 To use the script, perform the following steps:
 
