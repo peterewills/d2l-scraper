@@ -1,12 +1,24 @@
+from __future__ import print_function
+import sys
 from bs4 import BeautifulSoup as bs
 import csv
 
+def get_user_input(prompt):
+    """
+    If python3, return input(*args)
+    If python2, return raw_input(*args)
+    """
+    if sys.version_info > (3,0): # python 3
+        return input(prompt)
+    else: # python 2
+        return raw_input(prompt)
+    
 # This function scrapes the .html file downloaded from D2L and yields a list
 # of the users, in the form 'Last, First'
 
 def get_user_strings():
-
-    location = raw_input('Enter path of saved html file: ')
+    
+    location = get_user_input('Enter path of saved html file: ')
     html = open(location).read()
 
     soup = bs(html,'lxml')
@@ -32,11 +44,11 @@ def split_name(name):
 
 def csv_write(user_strings):
 
-    name = raw_input('Enter desired path of csv file: ')
+    name = get_user_input('Enter desired path of csv file: ')
     while name[len(name)-4:] != '.csv':
-        name = raw_input('Gotta end in .csv! Try again: ')
+        name = get_user_input('Gotta end in .csv! Try again: ')
 
-    with open(name,'wa') as csvfile:
+    with open(name,'a') as csvfile:
         spamwriter = csv.writer(csvfile, delimiter=',',skipinitialspace=True,
                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
         for user in user_strings:
@@ -44,6 +56,7 @@ def csv_write(user_strings):
 
 
 # Now we run everything, and exclaim our amazement at the result.
-user_strings = get_user_strings()
-csv_write(user_strings)
-print 'Shazam!'
+if __name__ == '__main__':
+    user_strings = get_user_strings()
+    csv_write(user_strings)
+    print('Shazam!')
