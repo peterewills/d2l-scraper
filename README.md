@@ -19,7 +19,7 @@ You can optionally specify TA names.  d2l_scraper.py will shuffle the TA names a
 
 ## Example session with d2l-scraper
 ```
-james@folberjm-2: d2l-scraper$ python d2l_scraper.py 
+james@folberjm-2: d2l-scraper$ python2 d2l_scraper.py 
 Enter path of saved html file: /path/to/d2l_1.html
 Enter path of saved html file (blank to continue): /path/to/d2l_2.html
 Enter path of saved html file (blank to continue): 
